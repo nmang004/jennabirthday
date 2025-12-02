@@ -1,0 +1,119 @@
+.footer {
+  padding: var(--spacing-xl) var(--spacing-md);
+  text-align: center;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(255, 105, 180, 0.05) 100%
+  );
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+body.dark-mode .footer {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(255, 105, 180, 0.08) 100%
+  );
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+.footer-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.footer-age-wrapper {
+  margin-bottom: 2rem;
+}
+
+.footer-age-label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  margin-bottom: 0.5rem;
+}
+
+.footer-age {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.footer-age-number {
+  font-family: var(--font-serif);
+  font-size: clamp(6rem, 20vw, 10rem);
+  font-weight: 400;
+  line-height: 1;
+  background: linear-gradient(
+    135deg,
+    var(--color-birthday) 0%,
+    var(--color-birthday-gold) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.footer-age-text {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-style: italic;
+  color: var(--color-text-light);
+}
+
+.footer-age-sublabel {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--color-text-light);
+  margin-top: 0.5rem;
+}
+
+.footer-emojis {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.footer-message {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  margin: 0 0 2rem;
+}
+
+.footer-year {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--color-text-light);
+  opacity: 0.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer {
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+
+  .footer-emojis {
+    font-size: 2rem;
+    gap: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-emojis span {
+    animation: none !important;
+  }
+}

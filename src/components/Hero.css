@@ -1,0 +1,153 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: var(--spacing-lg);
+  overflow: hidden;
+}
+
+.hero-content {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* Title words */
+.hero-title-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-title-word {
+  font-family: var(--font-sans);
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+}
+
+.hero-title-word--accent {
+  color: var(--color-birthday);
+  font-weight: 500;
+}
+
+/* Name */
+.hero-name {
+  font-family: var(--font-serif);
+  font-size: clamp(4rem, 15vw, 12rem);
+  font-weight: 400;
+  line-height: 1;
+  margin: 0;
+  color: var(--text-color);
+  perspective: 1000px;
+}
+
+.hero-name-letter {
+  display: inline-block;
+  transform-origin: bottom center;
+}
+
+.hero-name-letter:nth-child(1) {
+  color: var(--color-birthday);
+}
+
+.hero-name-heart {
+  display: inline-block;
+  font-size: 0.4em;
+  vertical-align: super;
+  margin-left: 0.2em;
+}
+
+/* Underline */
+.hero-underline {
+  width: 200px;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--color-birthday),
+    var(--color-birthday-gold),
+    var(--color-birthday)
+  );
+  margin: 2rem auto 0;
+  border-radius: 2px;
+  transform-origin: center;
+}
+
+/* Decorative elements */
+.hero-decorative {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.8;
+}
+
+.hero-decorative--left {
+  top: -1rem;
+  left: -3rem;
+}
+
+.hero-decorative--right {
+  bottom: -1rem;
+  right: -3rem;
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-text-light);
+}
+
+.scroll-indicator-text {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.scroll-indicator-arrow {
+  font-size: 1.5rem;
+  color: var(--color-birthday);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    padding: var(--spacing-md);
+  }
+
+  .hero-title-wrapper {
+    gap: 0.3rem;
+  }
+
+  .hero-decorative {
+    font-size: 1.5rem;
+  }
+
+  .hero-decorative--left {
+    left: -1rem;
+  }
+
+  .hero-decorative--right {
+    right: -1rem;
+  }
+
+  .hero-underline {
+    width: 150px;
+  }
+
+  .scroll-indicator {
+    bottom: 2rem;
+  }
+}

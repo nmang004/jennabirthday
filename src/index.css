@@ -1,0 +1,181 @@
+/* ========================================
+   JENNA'S BIRTHDAY - GLOBAL STYLES
+   Design system from portfolio
+======================================== */
+
+/* CSS Variables */
+:root {
+  /* Typography */
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Noto Serif', serif;
+
+  /* Light Mode Colors */
+  --bg-color: #f4f4f0;
+  --text-color: #1a1a1a;
+  --color-text-light: #666;
+  --color-accent: #ff4d00;
+
+  /* Birthday Colors */
+  --color-birthday: #ff69b4;
+  --color-birthday-gold: #ffd700;
+  --color-birthday-light: #ffb6c1;
+
+  /* Spacing */
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 8rem;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Shadows - Light Mode */
+  --shadow-base:
+    0 2px 4px rgba(0, 0, 0, 0.02),
+    0 8px 16px rgba(0, 0, 0, 0.04),
+    0 24px 48px rgba(0, 0, 0, 0.06);
+  --shadow-hover:
+    0 4px 8px rgba(0, 0, 0, 0.03),
+    0 16px 32px rgba(0, 0, 0, 0.06),
+    0 32px 64px rgba(0, 0, 0, 0.09);
+}
+
+/* Dark Mode */
+body.dark-mode {
+  --bg-color: #1a1a1a;
+  --text-color: #f4f4f0;
+  --color-text-light: #aaa;
+  --color-accent: #ff6b3d;
+  --color-birthday: #ff85c1;
+  --color-birthday-gold: #ffe066;
+
+  --shadow-base:
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    0 8px 16px rgba(0, 0, 0, 0.15),
+    0 24px 48px rgba(0, 0, 0, 0.2);
+  --shadow-hover:
+    0 4px 8px rgba(0, 0, 0, 0.15),
+    0 16px 32px rgba(0, 0, 0, 0.2),
+    0 32px 64px rgba(0, 0, 0, 0.3);
+}
+
+/* Reset */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Grain Overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+p {
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-birthday);
+  color: white;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-text-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-birthday);
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Utility Classes */
+.serif {
+  font-family: var(--font-serif);
+}
+
+.sans {
+  font-family: var(--font-sans);
+}
+
+.accent {
+  color: var(--color-birthday);
+}
+
+.gold {
+  color: var(--color-birthday-gold);
+}

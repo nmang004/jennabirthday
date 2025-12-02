@@ -1,0 +1,123 @@
+.love-letter {
+  padding: var(--spacing-xl) var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(255, 215, 0, 0.02) 50%,
+    transparent 100%
+  );
+}
+
+body.dark-mode .love-letter {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(255, 215, 0, 0.03) 50%,
+    transparent 100%
+  );
+}
+
+.love-letter-container {
+  max-width: 700px;
+  text-align: center;
+  padding: var(--spacing-lg);
+}
+
+.love-letter-emoji {
+  display: block;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.love-letter-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-color);
+  margin: 0 0 1.5rem;
+}
+
+.love-letter-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.love-letter-divider span:first-child,
+.love-letter-divider span:last-child {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-birthday-gold),
+    transparent
+  );
+}
+
+.love-letter-heart {
+  font-size: 1.5rem;
+}
+
+.love-letter-message {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-color);
+  margin: 0 0 2rem;
+}
+
+.love-letter-message--secondary {
+  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+  color: var(--color-text-light);
+  font-style: italic;
+}
+
+.love-letter-signature {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--color-text-light);
+  margin: 3rem 0 2rem;
+  line-height: 1.8;
+}
+
+.love-letter-signature-name {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--color-birthday);
+}
+
+.love-letter-decoration {
+  font-size: 1.5rem;
+  letter-spacing: 0.5em;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .love-letter {
+    padding: var(--spacing-lg) var(--spacing-sm);
+    min-height: 60vh;
+  }
+
+  .love-letter-container {
+    padding: var(--spacing-md);
+  }
+
+  .love-letter-emoji {
+    font-size: 2.5rem;
+  }
+
+  .love-letter-divider span:first-child,
+  .love-letter-divider span:last-child {
+    width: 40px;
+  }
+}

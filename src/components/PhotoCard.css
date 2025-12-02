@@ -1,0 +1,159 @@
+.photo-card {
+  position: relative;
+  width: 100%;
+  transform-style: preserve-3d;
+}
+
+.photo-card-inner {
+  position: relative;
+  background: var(--bg-color);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-base);
+  transition:
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+body.dark-mode .photo-card-inner {
+  background: #222;
+}
+
+.photo-card:hover .photo-card-inner {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Accent line */
+.photo-card-accent-line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(
+    180deg,
+    var(--color-birthday),
+    var(--color-birthday-gold)
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 2;
+}
+
+.photo-card:hover .photo-card-accent-line {
+  opacity: 1;
+}
+
+/* Image wrapper */
+.photo-card-image-wrapper {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    var(--color-birthday-light) 0%,
+    var(--color-birthday) 100%
+  );
+}
+
+body.dark-mode .photo-card-image-wrapper {
+  background: linear-gradient(
+    135deg,
+    #333 0%,
+    #444 100%
+  );
+}
+
+.photo-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+/* Placeholder */
+.photo-card-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: white;
+  opacity: 0.8;
+}
+
+.photo-card-placeholder-icon {
+  font-size: 3rem;
+}
+
+.photo-card-placeholder-text {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Content */
+.photo-card-content {
+  padding: 1.25rem 1.5rem;
+}
+
+.photo-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.photo-card-occasion {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-birthday);
+  background: rgba(255, 105, 180, 0.1);
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.photo-card:hover .photo-card-occasion {
+  background: var(--color-birthday);
+  color: white;
+}
+
+.photo-card-date {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: var(--color-text-light);
+}
+
+.photo-card-caption {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--text-color);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .photo-card-inner {
+    border-radius: 16px;
+  }
+
+  .photo-card-content {
+    padding: 1rem 1.25rem;
+  }
+
+  .photo-card-caption {
+    font-size: 0.9rem;
+  }
+}

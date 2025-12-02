@@ -1,0 +1,63 @@
+.cursor {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 10000;
+  mix-blend-mode: difference;
+  transition:
+    width 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    height 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.cursor--hidden {
+  opacity: 0;
+}
+
+.cursor--clicked {
+  transform: translate(-50%, -50%) scale(0.8);
+}
+
+.cursor--link-hovered {
+  width: 40px;
+  height: 40px;
+}
+
+.cursor--photo-hovered {
+  width: 80px;
+  height: 80px;
+  background-color: var(--color-birthday);
+  mix-blend-mode: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cursor-text {
+  font-size: 1.5rem;
+  color: white;
+  pointer-events: none;
+}
+
+/* Hide default cursor when custom cursor is active */
+@media (min-width: 769px) {
+  body {
+    cursor: none;
+  }
+
+  a, button, .photo-card {
+    cursor: none;
+  }
+}
+
+/* Don't show custom cursor on mobile */
+@media (max-width: 768px) {
+  .cursor {
+    display: none;
+  }
+}
