@@ -69,7 +69,7 @@ body.dark-mode {
 }
 
 html {
-  scroll-behavior: smooth;
+  /* scroll-behavior handled by Lenis library in App.jsx */
 }
 
 body {
