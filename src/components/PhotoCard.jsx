@@ -59,9 +59,6 @@ const PhotoCard = ({ photo, index }) => {
             {photo.occasion && (
               <span className="photo-card-occasion">{photo.occasion}</span>
             )}
-            {photo.date && (
-              <span className="photo-card-date">{photo.date}</span>
-            )}
           </div>
           {photo.caption && (
             <p className="photo-card-caption">{photo.caption}</p>
